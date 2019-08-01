@@ -1,0 +1,22 @@
+<%= render "users/user_info" %>
+
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <h3 class="text-center"><%= @title %></h3>
+        <hr>
+
+        <% @users.each do |user| %>
+            <div class="media mb-3">
+                <%= gravatar_for user %>
+
+                <div class="media-body ml-3">
+                    <h4><%= link_to user.name, user %></h4>
+                </div>
+            </div>
+        <% end %>
+
+        <div class="paginate">
+            <%= will_paginate %>
+        </div>
+    </div>
+</div>

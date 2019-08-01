@@ -1,0 +1,16 @@
+<%= render "users/user_info" %>
+
+<div>
+    <% if @microposts.any? %>
+        <!-- rendering a collection: micropost/_micropost.html.erb -->
+        <ul class="list-unstyled">
+            <%= render @microposts %>
+        </ul>
+    <% else %>
+        <div class="text-muted">Nothing to show</div>
+    <% end %>
+</div>
+<hr>
+<div class="card-footer paginate text-center">
+    <%= will_paginate @microposts if @microposts.any? %>
+</div>
